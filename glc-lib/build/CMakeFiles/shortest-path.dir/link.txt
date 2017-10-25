@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG -std=c++0x -O3   CMakeFiles/shortest-path.dir/src/shortest-path.cpp.o  -o ../examples/shortest-path -rdynamic 
