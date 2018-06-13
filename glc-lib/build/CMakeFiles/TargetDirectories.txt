@@ -1,3 +1,0 @@
-/home/melkor/Code/glc-lib/build/CMakeFiles/edit_cache.dir
-/home/melkor/Code/glc-lib/build/CMakeFiles/rebuild_cache.dir
-/home/melkor/Code/glc-lib/build/CMakeFiles/shortest-path.dir
