@@ -1,1 +1,1 @@
-https://travis-ci.org/kandadaboggu/iprofiler.png?branch=master
+https://travis-ci.com/bapaden/glc-lib.png?branch=master
