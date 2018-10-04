@@ -67,3 +67,29 @@ target_link_libraries(base-test
                       glc_planner_core)
                       
 add_test(gtest-base-test base-test)
+
+## Installation ##
+
+set(INCLUDE_INSTALL_ROOT_DIR include)
+set(INCLUDE_INSTALL_DIR ${INCLUDE_INSTALL_ROOT_DIR}/glc)
+set(LIB_INSTALL_DIR "lib${LIB_SUFFIX}")
+
+set(_INSTALL_DESTINATIONS
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION ${LIB_INSTALL_DIR}
+  ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
+)
+
+install(TARGETS glc_planner_core
+                glc_interface
+                glc_interpolation
+                glc_logging
+                glc_math
+                glc_state_equivalence_class
+        EXPORT 
+                ${_INSTALL_DESTINATIONS})
+install(
+  DIRECTORY ${header_directory}
+  DESTINATION ${INCLUDE_INSTALL_DIR}
+  FILES_MATCHING PATTERN "*.h"
+)
