@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(glc-lib)
 
 find_package(GTest REQUIRED)
+enable_testing()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_RELEASE} -std=c++0x -fopenmp -O3")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_DEBUG} -std=c++0x")#for debug
