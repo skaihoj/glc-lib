@@ -1,8 +1,3 @@
-/* Copyright (C) Brian Paden (bapaden@mit.edu) - All Rights Reserved
- * Written by Brian Paden
- * Incorporation into open source software is not permitted.
- * Use in private (closed source) projects for academic research is permitted.
- */
 
 /* This example illustrates how to interface with the glc planner.
  * One must provide:

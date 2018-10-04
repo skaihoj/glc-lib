@@ -1,3 +1,8 @@
+/* Copyright (C) Brian Paden (bapaden@mit.edu) - All Rights Reserved
+ * Written by Brian Paden
+ * Released under the GNU General Public License v3
+ */
+
 #include <glc/glc_numerical_integration.h>
 
 namespace glc{
