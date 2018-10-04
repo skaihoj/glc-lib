@@ -1,1 +1,1 @@
-https://travis-ci.com/bapaden/glc-lib.png?branch=master
+[![Build Status](https://travis-ci.com/bapaden/glc-lib.svg?branch=master)](https://travis-ci.com/bapaden/glc-lib)
