@@ -1,3 +1,1 @@
-
-### Status
-[![Build Status](https://travis-ci.org/bapaden/glc-lib.png)](https://travis-ci.org/bapaden/glc-lib)
+https://travis-ci.org/kandadaboggu/iprofiler.png?branch=master

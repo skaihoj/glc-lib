@@ -6,7 +6,7 @@ using namespace glc;
 /**
  * \brief Test that the square function squares a number.
  */
-TEST(GlcMath,TestSqr){
+TEST(GlcStateEquivalence,Order){
   double x = 2.0;
   
   EXPECT_EQ(sqr(x),4.0);
