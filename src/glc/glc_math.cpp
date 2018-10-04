@@ -6,14 +6,6 @@ double sqr(const double x){
   return x*x;
 }
 
-// double normSquare(const std::valarray<double>& x){
-//   double y=0.0;
-//   for(int i=0;i<x.size();i++){
-//     y+=x[i]*x[i];
-//   }
-//   return y;
-// }
-
 std::vector<int> vecFloor(const std::valarray<double>& x){
   std::vector<int> floored(x.size());
   for(int i=0;i<x.size();i++){
@@ -39,7 +31,7 @@ double norm2(const std::valarray<double>& x){
   return std::sqrt(norm);
 }
 
-double norm_sqr(const std::valarray<double>& x){
+double normSqr(const std::valarray<double>& x){
   double norm=0;
   for(int i=0; i<x.size(); i++){
     norm=norm+sqr(x[i]);
@@ -48,6 +40,7 @@ double norm_sqr(const std::valarray<double>& x){
 }
 
 std::valarray<double> linearSpace(const double& start, const double& end, const int points){
+  assert(end > start && "[ERROR] in linearSpace -- end is less than start");
   std::valarray<double> lin_space(points);
   double step = (end-start)/double(points);
   lin_space[0]=start;

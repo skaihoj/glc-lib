@@ -15,10 +15,11 @@ StateEquivalenceClass::StateEquivalenceClass(const std::shared_ptr<Node>& _label
   label = _label;
   coordinate=vecFloor(label->state);
 }
+
 bool StateEquivalenceClass::empty(){
   return label->cost == std::numeric_limits<double>::max();
 }
-//Lexicographical order of integer tuple for sorting stl set of domains
+
 bool StateEquivalenceClass::operator<(const StateEquivalenceClass& y) const{
   assert(coordinate.size()==y.coordinate.size());
   return std::lexicographical_compare <std::vector<int>::const_iterator, std::vector<int>::const_iterator>

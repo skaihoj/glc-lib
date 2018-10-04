@@ -1,4 +1,4 @@
-#include<glc/glc_math.h>
+#include<glc/glc_state_equivalence_class.h>
 #include<gtest/gtest.h>
 
 using namespace glc;
@@ -40,7 +40,7 @@ TEST(GlcMath,TestDot){
   std::valarray<double> a = {1.,1.,-1.};
   std::valarray<double> b = {1.,2.,3.};
   double inner_product_b = dot(a,b);
-
+  
   EXPECT_EQ(inner_product_b,0.);
 }
 
@@ -52,7 +52,7 @@ TEST(GlcMath,TestNormSqr){
   double norm_square_a = normSqr(x);
   
   EXPECT_EQ(norm_square_a,14.);
-
+  
   std::valarray<double> y = {1.,2.,-3.};
   double norm_square_b = normSqr(x);
   
@@ -66,7 +66,7 @@ TEST(GlcMath,TestNorm){
   std::valarray<double> a = {1.,1.,1.};
   double norm_a = norm2(a);
   EXPECT_EQ(norm_a,sqrt(3.));
-
+  
   std::valarray<double> b = {3.,0.,0.};
   double norm_b = norm2(b);
   EXPECT_EQ(norm_b,3.);

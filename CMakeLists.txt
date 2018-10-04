@@ -13,18 +13,38 @@ set(SRC_PATH ${CMAKE_SOURCE_DIR}/src/glc)
 set(EXAMPLE_PATH ${CMAKE_SOURCE_DIR}/src)
 set(TEST_PATH ${CMAKE_SOURCE_DIR}/test)
 
-#Level-0 of dependancy graph
+#Level-0 of local dependency graph
 add_library(glc_math ${SRC_PATH}/glc_math.cpp)
 add_library(glc_interpolation ${SRC_PATH}/glc_interpolation.cpp)
 add_library(glc_node ${SRC_PATH}/glc_node.cpp)
+add_library(glc_parameters ${SRC_PATH}/glc_parameters.cpp)
 
-#Level-1 of dependancy graph
+#Level-1 of local dependency graph
 add_library(glc_state_equivalence_class ${SRC_PATH}/glc_state_equivalence_class.cpp)
 target_link_libraries(glc_state_equivalence_class
                       glc_node
                       glc_math)
 
+add_library(glc_interface ${SRC_PATH}/glc_interface.cpp)
+target_link_libraries(glc_interface
+                      glc_interpolation)
+                      
+#Level-2 of local dependency graph
+add_library(glc_logging ${SRC_PATH}/glc_logging.cpp)
+target_link_libraries(glc_logging 
+                      glc_interpolation
+                      glc_state_equivalence_class)
+                      
+add_library(glc_numerical_integration ${SRC_PATH}/glc_numerical_integration.cpp)
+target_link_libraries(glc_numerical_integration
+                      glc_interpolation
+                      glc_interface)
 
+#Level-3 of local dependency graph                      
+add_library(glc_planner_core ${SRC_PATH}/glc_planner_core.cpp)
+target_link_libraries(glc_planner_core
+                      glc_numerical_integration
+                      glc_logging)
 
 ##Put the executables in the examples folder
 # set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/build/bin)
@@ -32,12 +52,17 @@ target_link_libraries(glc_state_equivalence_class
 # add_executable(shortest-path ${DEMO_SOURCE}/shortest-path.cpp)
 # add_executable(car-demo ${DEMO_SOURCE}/nonholonomic-car-demo.cpp)
 
+#Unit Test
+add_executable(test_glc_math ${TEST_PATH}/test_glc_math.cpp)
+target_link_libraries(test_glc_math
+                      ${GTEST_BOTH_LIBRARIES} 
+                      glc_math)
+add_test(gtest_glc_math test_glc_math)
+
+#System Test
 add_executable(base-test ${TEST_PATH}/base_test.cpp)
 target_link_libraries(base-test 
                       ${GTEST_BOTH_LIBRARIES} 
-                      glc_math 
-                      glc_interpolation 
-                      glc_node
-                      glc_state_equivalence_class)
+                      glc_planner_core)
                       
 add_test(gtest-base-test base-test)

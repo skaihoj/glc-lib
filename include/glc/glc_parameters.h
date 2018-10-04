@@ -1,6 +1,9 @@
 #ifndef GLC_PARAMETERS_H
 #define GLC_PARAMETERS_H
 
+#include<valarray>
+#include<iostream>
+
 namespace glc{
   struct Parameters{
     //Initial condition
@@ -23,19 +26,7 @@ namespace glc{
     double dt_max;
     //scaling of grid
     
-    void printParams(){
-      std::cout << "state_dim " << state_dim << std::endl;
-      std::cout << "control_dim " << control_dim << std::endl;
-      std::cout << "res " << res << std::endl;
-      std::cout << "max_iter " << max_iter << std::endl;
-      std::cout << "time_scale " << time_scale << std::endl;
-      std::cout << "partition_scale " << partition_scale << std::endl;
-      std::cout << "depth_scale " << depth_scale << std::endl;
-      std::cout << "dt_max_scale " << partition_scale << std::endl;
-      std::cout << "size of x0 " << x0.size() << std::endl;
-      
-      return;        
-    }
+    void printParams();
   };
   
 }//namespace glc

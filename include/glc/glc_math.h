@@ -7,13 +7,10 @@
 #ifndef GLC_MATH_H
 #define GLC_MATH_H
 
+//External depenencies
 #include <iostream>
-// #include <cstdio>
 #include <vector>
 #include <cassert>
-// #include <float.h>
-// #include <string.h>
-// #include <time.h>
 #include <sstream>
 #include <fstream>
 #include <string>
@@ -33,33 +30,20 @@ double sqr(const double x);
  * \param x is the input vector whose norm will be squared.
  * \returns The square of the norm of the parameter x.
  */
-// double normSquare(const std::valarray<double>& x);
+double normSqr(const std::valarray<double>& x);
 
 /**
  * \brief Calculates the square of the L2-norm of a vector.
  * \param x is the input vector whose norm will be squared
  * \param y is set to the square of the norm of the parameter x.
  */
-
-// void normSquare(const std::valarray<double>& x, double& y){
-//     y=0.0;
-//     for(int i=0;i<x.size();i++){
-//         y+=x[i]*x[i];
-//     }
-//     return;    
-// }
-
-// std::valarray<double> diff(const std::valarray<double>& x, const std::valarray<double>& y){
-//     return x-y;
-// }
-
 std::vector<int> vecFloor(const std::valarray<double>& x);
 
 double dot(const std::valarray<double>& x,const std::valarray<double>& y);
 
 double norm2(const std::valarray<double>& x);
 
-double norm_sqr(const std::valarray<double>& x);
+// double normSqr(const std::valarray<double>& x);
 
 std::valarray<double> linearSpace(const double& start, const double& end, const int points);
 
