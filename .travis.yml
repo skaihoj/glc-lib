@@ -1,10 +1,16 @@
 language: cpp
+include:
+  - os: linux
+    addons:
+      apt:
+        sources:
+          - ubuntu-toolchain-r-test
 compiler:
   - gcc
-  - clang
 script:
   - mkdir build
   - cd build
   - cmake ..
-  - make
+  - make 
   - make test
+
