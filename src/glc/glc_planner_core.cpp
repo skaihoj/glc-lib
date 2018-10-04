@@ -13,7 +13,7 @@ Planner::Planner(Obstacles* _obs,
                  Heuristic* _h, 
                  CostFunction* _cf, 
                  const Parameters& _params, 
-                 const std::deque<std::valarray<double>>& _controls):
+                 const std::vector<std::valarray<double>>& _controls):
                  params(_params), 
                  controls(_controls), 
                  dynamics(_dynamics), 

@@ -12,7 +12,7 @@
 //STL containers used for planning queries
 #include <stack>
 #include <queue>
-#include <deque>
+#include <vector>
 #include <map>
 
 //internal linking to dependent libs
@@ -54,7 +54,7 @@ namespace glc{
     bool found_goal=false; 
     bool live=true;
     Parameters params;
-    std::deque<std::valarray<double>> controls;
+    std::vector<std::valarray<double>> controls;
     int sim_count = 0;
     int coll_check = 0;
     int iter=0;
@@ -67,7 +67,7 @@ namespace glc{
             Heuristic* _h, 
             CostFunction* _cf, 
             const Parameters& _params, 
-            const std::deque<std::valarray<double>>& _controls);
+            const std::vector<std::valarray<double>>& _controls);
 
     //Planner tree handling functions
     void addChild(std::shared_ptr<Node> parent, std::shared_ptr<Node> child);//TODO move to node class

@@ -86,7 +86,7 @@ install(TARGETS glc_planner_core
                 glc_logging
                 glc_math
                 glc_state_equivalence_class
-        EXPORT 
+        EXPORT  
                 ${_INSTALL_DESTINATIONS})
 install(
   DIRECTORY ${header_directory}

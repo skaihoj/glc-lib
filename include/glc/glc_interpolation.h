@@ -6,6 +6,7 @@
 #ifndef GLC_INTERPOLATION_H
 #define GLC_INTERPOLATION_H
 
+//External dependencies
 #include<vector>
 #include<valarray>
 #include<memory>

@@ -70,7 +70,7 @@ class EuclideanHeuristic : public glc::Heuristic{
   std::valarray<double> goal;
 public:
   EuclideanHeuristic(std::valarray<double>& _goal,double _radius):radius(_radius){goal=_goal;}
-  double costToGo(const std::valarray<double>& state){
+  double costToGo(const std::valarray<double>& state) const {
     return std::max(0.0,sqrt(glc::sqr(goal[0]-state[0])+glc::sqr(goal[1]-state[1]))-radius);//offset by goal radius
   }
   void setGoal(const std::valarray<double>& goal_){
@@ -97,7 +97,10 @@ class ArcLength: public glc::CostFunction
 public:
   ArcLength(int _sample_resolution) : glc::CostFunction(0.0),sample_resolution(double(_sample_resolution)){}
   
-  double cost(const std::shared_ptr<glc::InterpolatingPolynomial>& traj, const std::shared_ptr<glc::InterpolatingPolynomial>& control, double t0, double tf) override {
+  double cost(const std::shared_ptr<glc::InterpolatingPolynomial>& traj, 
+              const std::shared_ptr<glc::InterpolatingPolynomial>& control, 
+              double t0, 
+              double tf) const {
     double c(0);
     double t = traj->initialTime();
     double dt = (tf-t0)/sample_resolution;

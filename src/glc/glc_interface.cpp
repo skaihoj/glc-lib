@@ -8,7 +8,7 @@
 namespace glc{
 
 void Inputs::addInputSample(std::valarray<double>& _input){points.push_back(_input);}
-const std::deque<std::valarray<double>>& Inputs::readInputs(){
+const std::vector<std::valarray<double>>& Inputs::readInputs() const {
   return points;
 }
 
