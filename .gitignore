@@ -1,4 +1,11 @@
+#Build folders
 build/
 bin/
+
+#Documenation folders
+html/
+latex/
+
+#IDE configuration
 *.kdev4
 
