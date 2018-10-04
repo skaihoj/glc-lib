@@ -29,6 +29,7 @@ matrix:
            - python-yaml
            - lcov
            - libopencv-dev
+					 - libgtest-dev
          sources: &precise_latest_boost_sources
            - ubuntu-toolchain-r-test
            - llvm-toolchain-precise-3.7
@@ -54,7 +55,6 @@ install:
         travis_retry wget --no-check-certificate --quiet -O - ${CMAKE_URL} | tar --strip-components=1 -xz -C ${DEPS_DIR}/cmake
         export PATH=${DEPS_DIR}/cmake/bin:${PATH}
       fi
-		- sudo apt-get install libgtest-dev
 script:
     ############################################################################
     # Build main and tests
