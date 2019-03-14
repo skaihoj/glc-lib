@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 project(glc-lib)
 
 #find_package(GTest REQUIRED)
-enable_testing()
+#enable_testing()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_RELEASE} -std=c++0x -fopenmp -O3")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_DEBUG} -std=c++0x")#for debug
@@ -54,17 +54,17 @@ target_link_libraries(glc_planner_core
 # add_executable(car-demo ${DEMO_SOURCE}/nonholonomic-car-demo.cpp)
 
 #Unit Test
-add_executable(test_glc_math ${TEST_PATH}/test_glc_math.cpp)
-target_link_libraries(test_glc_math
+#add_executable(test_glc_math ${TEST_PATH}/test_glc_math.cpp)
+#target_link_libraries(test_glc_math
                       #${GTEST_BOTH_LIBRARIES} 
-                      glc_math)
+#                      glc_math)
 #add_test(gtest_glc_math test_glc_math)
 
 #System Test
-add_executable(base-test ${TEST_PATH}/base_test.cpp)
-target_link_libraries(base-test 
-                      ${GTEST_BOTH_LIBRARIES} 
-                      glc_planner_core)
+#add_executable(base-test ${TEST_PATH}/base_test.cpp)
+#target_link_libraries(base-test 
+#                      ${GTEST_BOTH_LIBRARIES} 
+#                      glc_planner_core)
                       
 #add_test(gtest-base-test base-test)
 
