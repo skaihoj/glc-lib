@@ -34,9 +34,6 @@ before_install:
 
 install:
     - sudo pip install codecov
-    - sudo apt install libgtest-dev 
-    - sudo cp -a include/gtest /usr/include
-    - sudo cp -a libgtest_main.so libgtest.so /usr/lib/
     # Download and install recent cmake
     - |
       if [[ ${TRAVIS_OS_NAME} == "linux" ]]; then
