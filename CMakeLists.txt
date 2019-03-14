@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.5)
 project(glc-lib)
 
-find_package(GTest REQUIRED)
+#find_package(GTest REQUIRED)
 enable_testing()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_RELEASE} -std=c++0x -fopenmp -O3")
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_DEBUG} -std=c++0x")#for debug
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
-include_directories(${GTEST_INCLUDE_DIRS})
+#include_directories(${GTEST_INCLUDE_DIRS})
 
 set(SRC_PATH ${CMAKE_SOURCE_DIR}/src/glc)
 set(EXAMPLE_PATH ${CMAKE_SOURCE_DIR}/src)
@@ -56,9 +56,9 @@ target_link_libraries(glc_planner_core
 #Unit Test
 add_executable(test_glc_math ${TEST_PATH}/test_glc_math.cpp)
 target_link_libraries(test_glc_math
-                      ${GTEST_BOTH_LIBRARIES} 
+                      #${GTEST_BOTH_LIBRARIES} 
                       glc_math)
-add_test(gtest_glc_math test_glc_math)
+#add_test(gtest_glc_math test_glc_math)
 
 #System Test
 add_executable(base-test ${TEST_PATH}/base_test.cpp)
@@ -66,7 +66,7 @@ target_link_libraries(base-test
                       ${GTEST_BOTH_LIBRARIES} 
                       glc_planner_core)
                       
-add_test(gtest-base-test base-test)
+#add_test(gtest-base-test base-test)
 
 ## Installation ##
 
